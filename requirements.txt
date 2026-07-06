@@ -1,0 +1,6 @@
+Flask==3.1.2
+Flask-Cors==6.0.2
+opencv-python
+easyocr
+numpy
+pillow

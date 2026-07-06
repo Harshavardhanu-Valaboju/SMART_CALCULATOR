@@ -1,45 +1,288 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Smart Vision Calculator</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+        href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            Smart Vision Calculator
+
+        </div>
+
+        <div class="theme">
+
+            <button id=""themeToggle">
+                
+                🌙
+
+            </button>
+            
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero container">
 
         <h1>
 
-            Smart Vision Calculator
+            Scan • Detect • Calculate
 
         </h1>
 
         <p>
 
-            AI Powered OCR Calculator
+            AI Powered OCR Calculator for handwritten and printed bills.
 
         </p>
 
-        <h3>
+        <button class="start-btn">
 
-            Sprint 1 Successfully Started 🚀
+            Get Started
 
-        </h3>
+        </button>
+
+    </section>
+
+<!-- ================= ACTION CARDS ================= -->
+
+<section class="container action-section">
+
+    <div class="action-card">
+
+        <div class="card-icon">
+
+            📷
+
+        </div>
+
+        <h2>Scan Using Camera</h2>
+
+        <p>
+
+            Scan bills instantly using your webcame
+
+        </p>
+
+        <div class="camera-placeholder">
+
+            Camera Preview
+
+        </div>
+
+        <button class="action-btn camera-btn">
+
+            Open Camera
+
+        </button>
 
     </div>
+
+    <div class="upload-area">
+
+        <p>
+
+            Drag and Drop Image Here
+
+        </p>
+
+        <Span>
+
+            or
+
+        <span>
+
+        <button class="action-btn upload-btn">
+
+            Browse Image
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= OCR RESULT ================= -->
+
+<section class="container ocr-section">
+
+    <div class="ocr-card">
+
+        <div class="ocr-header">
+
+            <h2>OCR Detection Result</h2>
+
+            <span class="ocr-status">
+
+                Ready
+
+            </span>
+
+        </div>
+
+        <p class="ocr-subtitle">
+
+            Upload an image or scan using the camera to detect numbers.
+
+        </p>
+
+        <div class="ocr-result" id="ocrResult">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+
+<section class="container calculator-section">
+
+    <div class="calculator-card">
+
+        <div class="calculator-header">
+
+            <h2>Calculator</h2>
+
+        </div>
+
+        <div class="expression-box">
+
+            <label>Expression</label>
+
+            <input
+                type="text"
+                id="expression"
+                placeholder="Select numbers from OCR..."
+                readonly>
+
+        </div>
+
+        <div class="display-box">
+
+            <input
+                type="text"
+                id="display"
+                value="0"
+                readonly>
+
+        </div>
+
+        <div class="calculator-grid">
+
+            <button class="calc-btn">7</button>
+            <button class="calc-btn">8</button>
+            <button class="calc-btn">9</button>
+            <button class="operator">÷</button>
+
+            <button class="calc-btn">4</button>
+            <button class="calc-btn">5</button>
+            <button class="calc-btn">6</button>
+            <button class="operator">×</button>
+
+            <button class="calc-btn">1</button>
+            <button class="calc-btn">2</button>
+            <button class="calc-btn">3</button>
+            <button class="operator">−</button>
+
+            <button class="calc-btn">%</button>
+            <button class="calc-btn">0</button>
+            <button class="calc-btn">.</button>
+            <button class="operator">+</button>
+
+            <button class="clear-btn">Clear</button>
+
+            <button class="delete-btn">
+
+                ⌫
+
+            </button>
+
+            <button class="equal-btn">
+
+                =
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HISTORY ================= -->
+
+<section class="container history-section">
+
+    <div class="history-card">
+
+        <div class="history-header">
+
+            <h2>Calculation History</h2>
+
+            <button class="clear-history">
+
+                Clear History
+
+            </button>
+
+        </div>
+
+        <div class="history-list">
+
+            <div class="history-empty">
+
+                No calculations yet.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 
 </html>
+
+<footer>
+
+    <p>
+
+        Smart Vision Calculator © 2026
+
+    </p>
+
+</footer>
